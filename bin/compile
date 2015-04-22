@@ -29,11 +29,11 @@ apt-get $APT_OPTIONS update | indent
 
 apt-get $APT_OPTIONS -y --force-yes -d install --reinstall libldns1 libldns-dev libunbound-dev libexpat1-dev libexpat1 libidn11 libidn11-dev | indent
 #apt-get $APT_OPTIONS -y install libldns-dev libunbound-dev 2>&1 | indent
-
+ldns-read-zone -v 2>&1 | indent
 # configure
 if [ -f configure ]; then
   echo "-----> Autoreconf"
-  autoreconf --install 2>&1 | indent
+  # autoreconf --install 2>&1 | indent
   echo "-----> Configuring"
   ./configure 2>&1 | indent
 fi
