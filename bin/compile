@@ -38,7 +38,7 @@ if [ -f configure ]; then
   echo "-----> Autoreconf"
   # autoreconf --install 2>&1 | indent
   echo "-----> Configuring"
-  ./configure --with-trust-anchor=./getdns-root.key  --docdir=~/ --includedir=~/ --libdir=~/ --mandir=~/ 2>&1 | indent
+  ./configure --with-trust-anchor=./getdns-root.key  --docdir=/app/ --includedir=/app/ --libdir=/app/ --mandir=/app/ 2>&1 | indent
 fi
 
 # make
