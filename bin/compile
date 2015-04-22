@@ -21,7 +21,7 @@ cd $BUILD_DIR
 if [ -f configure ]; then
   echo "-----> Configuring"
   #apt-get install autoconf 2>&1 | indent
-  ./autoreconf --install 2>&1 | indent
+  autoreconf --install 2>&1 | indent
   ./configure 2>&1 | indent
 fi
 
