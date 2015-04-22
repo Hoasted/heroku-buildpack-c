@@ -33,7 +33,7 @@ apt-get $APT_OPTIONS -y --force-yes -d install --reinstall libldns1 libldns-dev 
 # configure
 if [ -f configure ]; then
   echo "-----> Autoreconf"
-  autoreconf --install 2>&1 | indent
+  # autoreconf --install 2>&1 | indent
   echo "-----> Configuring"
   ./configure 2>&1 | indent
 fi
