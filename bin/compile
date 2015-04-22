@@ -43,4 +43,4 @@ fi
 
 # make
 echo "-----> Compiling with Make"
-make; make install 2>&1 | indent
+make && make install 2>&1 | indent
