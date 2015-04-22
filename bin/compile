@@ -17,17 +17,20 @@ function indent() {
 
 cd $BUILD_DIR
 
-APT_CACHE_DIR="$CACHE_DIR/apt/cache"
-APT_STATE_DIR="$CACHE_DIR/apt/state"
+# APT_CACHE_DIR="$CACHE_DIR/apt/cache"
+# APT_STATE_DIR="$CACHE_DIR/apt/state"
 
-mkdir -p "$APT_CACHE_DIR/archives/partial"
-mkdir -p "$APT_STATE_DIR/lists/partial"
+# mkdir -p "$APT_CACHE_DIR/archives/partial"
+# mkdir -p "$APT_STATE_DIR/lists/partial"
 
-APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
+# APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
 
-apt-get $APT_OPTIONS update | indent
+# apt-get $APT_OPTIONS update | indent
 
-apt-get $APT_OPTIONS -y --force-yes install --reinstall libldns1 libldns-dev libunbound-dev libexpat1-dev libexpat1 libidn11 libidn11-dev | indent
+# apt-get $APT_OPTIONS -y --force-yes -d install --reinstall libldns1 libldns-dev libunbound-dev libexpat1-dev libexpat1 libidn11 libidn11-dev | indent
+# for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
+# 	dpkg -x $DEB $BUILD_DIR/.apt/
+# done
 #apt-get $APT_OPTIONS -y install libldns-dev libunbound-dev 2>&1 | indent
 #dpkg-query -l | grep "ldns" 2>&1 | indent
 # configure
